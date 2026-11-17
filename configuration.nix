@@ -8,6 +8,7 @@
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
+            ./modules/boot.nix
             ./modules/user-packages.nix
             ./modules/numlock.nix
         ];
