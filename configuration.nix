@@ -6,11 +6,16 @@
 
 {
     imports =
-        [ # Include the results of the hardware scan.
+        [   # Include the results of the hardware scan.
             ./hardware-configuration.nix
-            ./modules/boot.nix
+
+            # --- modules ---
             ./modules/user-packages.nix
             ./modules/numlock.nix
+            ./modules/boot.nix
+
+            # --- home-manager ---
+            ./home-manager.nix
         ];
 
     # Use the systemd-boot EFI boot loader.
