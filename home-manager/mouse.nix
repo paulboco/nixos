@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-    # Writes only the keys below, so other settings in kcminputrc and System Settings keep working.
+    # Writes only the keys below, other settings in kcminputrc and System Settings keep working.
     # Replace VENDOR, PRODUCT and NAME with the values from the [Libinput][...][...][...] header
     # in ~/.config/kcminputrc (see home-manager-setup.md, step 3).
 

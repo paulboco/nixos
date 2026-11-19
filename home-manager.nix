@@ -11,16 +11,20 @@
     home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+
         # Move any pre-existing unmanaged file aside instead of failing
         backupFileExtension = "backup";
-        # Set once; never change after first activation
-        sharedModules = [
-            { home.stateVersion = "26.05"; }
-        ];
+
+        # paulboco imports
         users.paulboco = {
             imports = [
                 ./home-manager/mouse.nix
             ];
         };
+
+        # Set once; never change after first activation
+        sharedModules = [
+            { home.stateVersion = "26.05"; }
+        ];
     };
 }
