@@ -27,7 +27,7 @@
         libreoffice
     ];
 
-    # sublime4 depends on the end-of-life OpenSSL 1.1
+    # Sublime Text (sublime4) depends on the end-of-life OpenSSL 1.1
     # See `nixos-new-beginnings\_doc\sublime-text-network-reduction.md`
     nixpkgs.config.permittedInsecurePackages = [
         "openssl-1.1.1w"
