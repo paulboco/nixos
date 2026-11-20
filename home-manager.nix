@@ -19,9 +19,15 @@
         users.paulboco = {
             imports = [
                 ./home-manager/dolphin.nix
-                ./home-manager/konsole.nix
-                ./home-manager/mouse.nix
                 ./home-manager/kate.nix
+                ./home-manager/konsole.nix
+                ./home-manager/kwin.nix
+                ./home-manager/mimeapps.nix
+                ./home-manager/mouse.nix
+                ./home-manager/power.nix
+                ./home-manager/session.nix
+                ./home-manager/theme.nix
+                ./home-manager/wallpaper.nix
             ];
         };
 
