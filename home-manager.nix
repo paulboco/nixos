@@ -18,6 +18,8 @@
         # paulboco imports
         users.paulboco = {
             imports = [
+                ./home-manager/dolphin.nix
+                ./home-manager/konsole.nix
                 ./home-manager/mouse.nix
             ];
         };
