@@ -21,6 +21,7 @@
                 ./home-manager/dolphin.nix
                 ./home-manager/konsole.nix
                 ./home-manager/mouse.nix
+                ./home-manager/kate.nix
             ];
         };
 
