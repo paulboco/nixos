@@ -21,7 +21,7 @@
                 ./home-manager/dolphin.nix
                 ./home-manager/kate.nix
                 ./home-manager/konsole.nix
-                ./home-manager/kwin.nix
+                # ./home-manager/kwin.nix
                 ./home-manager/mimeapps.nix
                 ./home-manager/mouse.nix
                 ./home-manager/power.nix
