@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
     # Dolphin keeps its toolbar layout in a kxmlgui file, not in dolphinrc.
@@ -24,5 +24,29 @@
                 <Action name="hamburger_menu"/>
             </ToolBar>
         </gui>
+    '';
+
+    # Writes only the keys below, other settings in dolphinrc and Dolphin's Configure dialog keep working.
+    # All keys are in the [General] group of ~/.config/dolphinrc.
+    home.activation.dolphinSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        kw="${pkgs.kdePackages.kconfig}/bin/kwriteconfig6"
+
+        # Folders & Tabs: keep a single window, open new folders in tabs
+        run "$kw" --file dolphinrc --group General --key OpenExternallyCalledFolderInNewTab true
+
+        # Folders & Tabs: show full path in title bar
+        run "$kw" --file dolphinrc --group General --key ShowFullPathInTitlebar true
+
+        # Folders & Tabs: always show tab bar
+        run "$kw" --file dolphinrc --group General --key AlwaysShowTabBar true
+
+        # Status & Location bars: status bar full width (enum, the other choice is "Small")
+        run "$kw" --file dolphinrc --group General --key ShowStatusBar FullWidth
+
+        # Status & Location bars: editable location bar
+        run "$kw" --file dolphinrc --group General --key EditableUrl true
+
+        # Status & Location bars: full path inside location bar
+        run "$kw" --file dolphinrc --group General --key ShowFullPath true
     '';
 }
