@@ -6,7 +6,7 @@
 
 {
     imports =
-        [   # Include the results of the hardware scan.
+        [   # hardware scan results
             ./hardware-configuration.nix
 
             # --- modules ---
