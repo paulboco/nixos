@@ -13,6 +13,7 @@
             ./modules/user-packages.nix
             ./modules/numlock.nix
             ./modules/boot.nix
+            ./modules/no-sleep.nix
 
             # --- home-manager ---
             ./home-manager.nix
