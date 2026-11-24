@@ -28,6 +28,9 @@
                 ./home-manager/session.nix
                 ./home-manager/theme.nix
                 ./home-manager/wallpaper.nix
+                ./home-manager/plasma-scale.nix
+                ./home-manager/plasma-pinned-apps.nix
+
             ];
         };
 
