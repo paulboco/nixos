@@ -15,6 +15,7 @@
         sublime-merge
 
         # --- Browsers ---
+        firefox
         chromium
 
         # --- Media ---
