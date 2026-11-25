@@ -7,6 +7,7 @@
         rar
         unrar
         p7zip
+        gparted
 
         # --- IT ---
         git
