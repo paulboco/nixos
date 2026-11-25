@@ -6,6 +6,7 @@ let
         "applications:systemsettings.desktop"
         "applications:org.kde.dolphin.desktop"
         "applications:sublime_text.desktop"
+        "applications:sublime_merge.desktop"
         "applications:chromium-browser.desktop"
         "applications:org.kde.konsole.desktop"
     ];
