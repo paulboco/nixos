@@ -94,8 +94,11 @@
         ];
     };
 
-    # Install firefox.
+    # Install firefox
     programs.firefox.enable = true;
+
+    #Install gparted
+    programs.gparted.enable = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
