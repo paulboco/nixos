@@ -10,6 +10,7 @@
             ./hardware-configuration.nix
 
             # --- modules ---
+            ./modules/shared-drive.nix
             ./modules/user-packages.nix
             ./modules/numlock.nix
             ./modules/boot.nix
