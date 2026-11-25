@@ -1,7 +1,7 @@
 { ... }:
 {
     fileSystems."/mnt/shared" = {
-        device = "/dev/disk/by-uuid/YOUR-UUID-HERE";
+        device = "/dev/disk/by-uuid/1DE0-DB30";
         fsType = "exfat";
         options = [
             "uid=1000"
