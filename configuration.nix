@@ -15,6 +15,7 @@
             ./modules/numlock.nix
             ./modules/boot.nix
             ./modules/no-sleep.nix
+            ./modules/swap-pgup-end.nix
 
             # --- home-manager ---
             ./home-manager.nix
