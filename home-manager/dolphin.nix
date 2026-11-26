@@ -48,5 +48,22 @@
 
         # Status & Location bars: full path inside location bar
         run "$kw" --file dolphinrc --group General --key ShowFullPath true
+
+        # General > Behavior: one common display style for all folders
+        # (stops Dolphin remembering a view mode per folder)
+        run "$kw" --file dolphinrc --group General --key GlobalViewProps true
+
+        # View Modes > Details: icon size 16 px (KIconLoader::SizeSmall, the smallest step)
+        # Row height follows the icon size and font, so this keeps rows compact.
+        run "$kw" --file dolphinrc --group DetailsMode --key IconSize 16
+
+        # The common display style is stored in a .directory file, not in dolphinrc.
+        # [Dolphin] ViewMode: DolphinView::Mode, 0 = Icons, 1 = Details, 2 = Compact, 3 = Columns.
+        # Version must match Dolphin's CurrentViewPropertiesVersion (4) or the file is discarded.
+        # Written with kwriteconfig6 rather than home.file so Dolphin can still update the file.
+        viewdir="$HOME/.local/share/dolphin/view_properties/global"
+        run mkdir -p "$viewdir"
+        run "$kw" --file "$viewdir/.directory" --group Dolphin --key ViewMode 1
+        run "$kw" --file "$viewdir/.directory" --group Dolphin --key Version 4
     '';
 }
