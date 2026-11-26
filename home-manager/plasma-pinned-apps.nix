@@ -8,6 +8,7 @@ let
         "applications:sublime_text.desktop"
         "applications:sublime_merge.desktop"
         "applications:chromium-browser.desktop"
+        "applications:firefox.desktop"
         "applications:org.kde.konsole.desktop"
     ];
 
