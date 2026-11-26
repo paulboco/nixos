@@ -20,7 +20,7 @@
                 var d = all[i];
                 d.wallpaperPlugin = "org.kde.color";
                 d.currentConfigGroup = ["Wallpaper", "org.kde.color", "General"];
-                d.writeConfig("Color", "0,32,0");
+                d.writeConfig("Color", "0,24,0");
             }
         '
 
