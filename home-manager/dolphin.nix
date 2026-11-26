@@ -65,5 +65,8 @@
         run mkdir -p "$viewdir"
         run "$kw" --file "$viewdir/.directory" --group Dolphin --key ViewMode 1
         run "$kw" --file "$viewdir/.directory" --group Dolphin --key Version 4
+
+        # Always show hidden files (key is in the [Settings] group of the same file)
+        run "$kw" --file "$viewdir/.directory" --group Settings --key HiddenFilesShown true
     '';
 }
