@@ -7,7 +7,7 @@
     # scripting D-Bus API, which writes the right containment on every desktop.
     #
     # Plain Color is the org.kde.color plugin, with the color in [Wallpaper][org.kde.color][General].
-    # The color is stored as "R,G,B", so #002000 is 0,32,0.
+    # The color is stored as "R,G,B", so #001600 is 0,22,0.
     #
     # This needs a running Plasma session. If plasmashell is not up (first boot, SSH rebuild),
     # the step is skipped and does nothing. Run "sudo nixos-rebuild switch" again from the desktop.
@@ -20,11 +20,11 @@
                 var d = all[i];
                 d.wallpaperPlugin = "org.kde.color";
                 d.currentConfigGroup = ["Wallpaper", "org.kde.color", "General"];
-                d.writeConfig("Color", "0,16,0");
+                d.writeConfig("Color", "0,22,0");
             }
         '
 
-        # Wallpaper > Wallpaper type: Plain Color, #002000
+        # Wallpaper > Wallpaper type: Plain Color, #001600
         run ${pkgs.systemd}/bin/busctl --user call org.kde.plasmashell /PlasmaShell \
             org.kde.PlasmaShell evaluateScript s "$script" || true
     '';
