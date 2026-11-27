@@ -15,6 +15,9 @@
         run "$kw" --file kcminputrc \
             --group Libinput --group 1149 --group 8257 --group "Kensington Slimblade Trackball" \
             --key PointerAcceleration -- -0.800
+        run "$kw" --file kcminputrc \
+            --group ButtonRebinds --group Mouse \
+            --key ExtraButton1 "MouseButton,274"
     '';
 }
 
