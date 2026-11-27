@@ -1,5 +1,32 @@
 { config, pkgs, ... }:
 
+let
+    # Sublime Text in an empty network namespace (no internet, no LAN).
+    # Sublime Merge is a separate package and is left untouched.
+    # Compare network namespaces for shell and Sublime Text with:
+    # `readlink /proc/self/ns/net /proc/$(pgrep -nx sublime_text)/ns/net`
+    # They should be different.
+    sublime-text-offline = pkgs.symlinkJoin {
+        name = "sublime-text-offline-${pkgs.sublime4.version}";
+        paths = [ pkgs.sublime4 ];
+        postBuild = ''
+            rm $out/bin/*
+            cat > $out/bin/sublime_text <<'EOF'
+            #!${pkgs.runtimeShell}
+            exec ${pkgs.bubblewrap}/bin/bwrap \
+                --dev-bind / / \
+                --unshare-net \
+                --die-with-parent \
+                ${pkgs.sublime4}/bin/sublime_text "$@"
+            EOF
+            chmod +x $out/bin/sublime_text
+            for alias in subl sublime sublime4; do
+                ln -s sublime_text $out/bin/$alias
+            done
+        '';
+    };
+in
+
 {
     users.users."paulboco".packages = with pkgs; [
         # --- System ---
@@ -11,7 +38,7 @@
         # --- IT ---
         git
         meld
-        sublime4
+        sublime-text-offline   # was: sublime4
         sublime-merge
 
         # --- Browsers ---
