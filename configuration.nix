@@ -16,6 +16,7 @@
             ./modules/boot.nix
             ./modules/no-sleep.nix
             ./modules/swap-pgup-end.nix
+            ./modules/qt-portal.nix
 
             # --- home-manager ---
             ./home-manager.nix
