@@ -55,7 +55,7 @@
 
         # View Modes > Details: icon size 16 px (KIconLoader::SizeSmall, the smallest step)
         # Row height follows the icon size and font, so this keeps rows compact.
-        run "$kw" --file dolphinrc --group DetailsMode --key IconSize 16
+        run "$kw" --file dolphinrc --group DetailsMode --key IconSize 32
 
         # The common display style is stored in a .directory file, not in dolphinrc.
         # [Dolphin] ViewMode: DolphinView::Mode, 0 = Icons, 1 = Details, 2 = Compact, 3 = Columns.
